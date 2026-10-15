@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AKT-Luxury-Websites/static/css/main.77d7d838.css",
+    "main.js": "/AKT-Luxury-Websites/static/js/main.7e6754c2.js",
+    "index.html": "/AKT-Luxury-Websites/index.html",
+    "main.77d7d838.css.map": "/AKT-Luxury-Websites/static/css/main.77d7d838.css.map",
+    "main.7e6754c2.js.map": "/AKT-Luxury-Websites/static/js/main.7e6754c2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.77d7d838.css",
+    "static/js/main.7e6754c2.js"
+  ]
+}
