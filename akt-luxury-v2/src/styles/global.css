@@ -1,0 +1,128 @@
+/* ─── AKT-Luxury Global Styles ─────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --gold:         #C9A84C;
+  --gold-light:   #E8D5A3;
+  --gold-dark:    #A07830;
+  --gold-muted:   rgba(201, 168, 76, 0.12);
+  --black:        #0A0A0A;
+  --off-black:    #111111;
+  --charcoal:     #1C1C1C;
+  --white:        #FAFAF8;
+  --off-white:    #F5F3EF;
+  --gray:         #888880;
+  --light-gray:   #E8E6E0;
+  --border:       #E0DDD6;
+  --font-display: 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Montserrat', 'Helvetica Neue', sans-serif;
+  --shadow-sm:    0 2px 12px rgba(0,0,0,0.06);
+  --shadow-md:    0 8px 32px rgba(0,0,0,0.10);
+  --shadow-lg:    0 20px 60px rgba(0,0,0,0.14);
+  --transition:   0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius:       2px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--white);
+  color: var(--black);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font-family: var(--font-body); cursor: pointer; }
+img { display: block; max-width: 100%; }
+input, textarea, select { font-family: var(--font-body); }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--off-white); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
+
+/* Animations */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes marqueeScroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes shimmerSlide {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-fade-up   { animation: fadeUp 0.7s ease both; }
+.animate-fade-up-2 { animation: fadeUp 0.7s 0.12s ease both; }
+.animate-fade-up-3 { animation: fadeUp 0.7s 0.24s ease both; }
+.animate-fade-up-4 { animation: fadeUp 0.7s 0.36s ease both; }
+.animate-fade-in   { animation: fadeIn 0.5s ease both; }
+
+/* Utility */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.45em;
+  color: var(--gold);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 14px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--black);
+  line-height: 1.05;
+}
+.divider-gold {
+  width: 40px;
+  height: 1px;
+  background: var(--gold);
+  margin: 20px auto;
+}
+
+/* Container */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* ─── Responsive Breakpoints ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+}
+@media (min-width: 769px) {
+  .hide-desktop { display: none !important; }
+}
+
+/* ─── ISSUE 8: Global premium micro-improvements ─────────────────────────── */
+/* Smooth focus rings for accessibility */
+button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+/* Subtle page-transition fade-in */
+.page {
+  animation: fadeIn 0.35s ease both;
+}
+/* Improved selection highlight */
+::selection {
+  background: rgba(201, 168, 76, 0.22);
+  color: var(--black);
+}
